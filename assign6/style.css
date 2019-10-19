@@ -18,6 +18,10 @@ h2{
 
 }
 
+.product_content h3{
+  color: rgb(242, 114, 114);
+}
+
 
 h4{
   font-size: 15px;
@@ -159,6 +163,18 @@ input[type=number]{
   margin-left: 20px;
   font-size: 15px;
   color: gray;
+}
+/* LOGIN */
+.login-box{
+  height: 500px;
+  width: 1000px;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%);
+  z-index: 2;
+  text-align: center;
 }
 
 /* PRODUCT SHOW */
@@ -354,3 +370,40 @@ nav{
   margin: 0 auto;
 }
 /* BROWSE NAV */
+
+/* SOCIAL MEDIA ICONS */
+.social-icons {
+  text-align: center;
+  }
+.social-icons li {
+  display:inline-block;
+  list-style-type:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  }
+.social-icons li a {
+  border-bottom: none;
+  }
+.social-icons li img {
+  width:70px;
+  height:70px;
+  margin-right: 20px;
+
+
+}
+
+[type=submit] {
+  background-color: rgb(242, 114, 114) ;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  shadow: none;
+  border: none;
+
+  margin: 0 auto;
+}
+
+[type=submit]:hover {
+  background-color: red ;

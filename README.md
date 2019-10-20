@@ -15,3 +15,4 @@ PUI Class Assignments
 <p>to reach home, click on logo</p>
 <p>to reach browse, click on "shop", "see all", or "couch pillows" </p>
 <p>to reach product_show, click on nervous pillow </p>
+<p>to reach login, click on account</p>

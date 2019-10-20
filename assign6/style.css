@@ -139,9 +139,14 @@ body{
 
 
 input[type=number]{
-    width: 20px;
+    width: 50px;
+    border:solid rgb(242, 114, 114) 1px;
 }
 
+input[type="number"].hotfix::-webkit-outer-spin-button,
+input[type="number"].hotfix::-webkit-inner-spin-button {
+  height:auto;
+}
 
 .material{
   height: 50px;

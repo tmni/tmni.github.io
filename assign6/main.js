@@ -1,9 +1,6 @@
 function selectDot(){
   var header = document.getElementById('dots');
   var btns = header.getElementsByClassName("dot");
-  var h = document.getElementById('materials');
-  var b = header.getElementsByClassName("material");
-    console.log(b)
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("selected");
@@ -31,5 +28,20 @@ function selectMat(){
   }
 }
 
+function addToCart(){
+  var amount = document.getElementById("amt").value;
+  if (amount != 0){
+
+
+    var old = document.getElementById("cart").innerHTML
+    var reg =  /\d+/;
+    var prev = (old.match(/\d+/))
+    var total = parseInt(prev) + parseInt(amount)
+    // var s = "Cart" + " (" total + ")"
+    console.log(total)
+    document.getElementById("cart").innerHTML = "Cart (" + String(total) + ")"
+  }
+
+  }
 
 /*** Document Load ****/

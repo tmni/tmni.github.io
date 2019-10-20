@@ -5,7 +5,8 @@
   <title>Fluff Stuff</title>
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <li><a href =#>Contact</a></li>
     <li><a href =#>About</a></li>
     <li><a href =#>Shop</a></li>
-    <li><a href =#>Cart(2)</a></li>
+    <li><a href =# id= "cart"> Cart (0)</a></li>
 
   </ul>
 </div>
@@ -42,7 +43,7 @@
         <h4> $13.99 </h4>
         <form>
           <h5> Quantity </h5>
-        <input type="number" name="points" step="1">
+        <input type="number" name="points" step="1" id= "amt">
         </form>
         <h5> Select a Color </h5> <!-- colors to choose from -->
         <div id = 'dots' onclick = selectDot() >
@@ -59,13 +60,15 @@
         <img class = "material" src = "assets/poly.png" alt = "poly">
 
         <div class = "product-button-wishlist"><a href=#>Add To Wishlist</a></div>
-        <div class = "product-button-add"><a href=#>Add To Cart</a></div>
+        <div class = "product-button-add" onClick= addToCart()><a href=#>Add To Cart</a></div>
 
         </div>
         </div>
 
 
       </div>
-        <script type="text/javascript" src="main.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+
+
 
     </body>

@@ -181,11 +181,10 @@ input[type="number"].hotfix::-webkit-inner-spin-button {
 .login-box{
   height: 500px;
   width: 1000px;
-  position:relative;
   top: 50%;
   left: 50%;
+  margin-left: 200px;
   background-color: white;
-  transform: translate(-50%);
   z-index: 2;
   text-align: center;
 }

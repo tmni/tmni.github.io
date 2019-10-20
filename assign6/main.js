@@ -1,3 +1,5 @@
+
+
 function selectDot(){
   var header = document.getElementById('dots');
   var btns = header.getElementsByClassName("dot");
@@ -30,18 +32,30 @@ function selectMat(){
 
 function addToCart(){
   var amount = document.getElementById("amt").value;
-  if (amount != 0){
+  console.log(amount)
+  if (amount >0){
 
 
     var old = document.getElementById("cart").innerHTML
     var reg =  /\d+/;
     var prev = (old.match(/\d+/))
+    if (prev == null){
+      prev = 0;
+    }
     var total = parseInt(prev) + parseInt(amount)
     // var s = "Cart" + " (" total + ")"
-    console.log(total)
     document.getElementById("cart").innerHTML = "Cart (" + String(total) + ")"
+    alert("Added " + amount + " items to cart!")
+    localStorage.setItem("cartTot", JSON.stringify(total));
+    }
+  }
+function cartNum(){
+  var cartnum = JSON.parse(localStorage.getItem("cartTot"))
+  console.log("the cart num is" + cartnum)
+  if (cartnum >0){
+    document.getElementById("cart").innerHTML = "Cart (" + String(cartnum) + ")"
   }
 
-  }
 
+}
 /*** Document Load ****/

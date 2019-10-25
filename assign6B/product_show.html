@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+  <title>Fluff Stuff</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+</head>
+
+<body onload = cartNum()>
+<nav>
+  <div class = "logo">
+    <a href="index.html"><img src="assets/logo.png" alt = "logo" height="100" width="100"/></a>
+  </div>
+  <div class="navigation">
+  <ul>
+    <li><a href =#>Contact</a></li>
+    <li><a href =#>About</a></li>
+    <li><a href =browse.html>Shop</a></li>
+    <li><a href =# id= "cart">Cart</a></li>
+    <li><a href =login.html>Account</a></li>
+
+  </ul>
+</div>
+</nav>
+  <div class = "back">
+    <img src="assets/back.png" alt ="back" height= 600 width = 1400>
+    </div>
+    <div class = "show_box" id = "test"> <!-- overlay on browse screen with product -->
+
+
+      <div class = "product_content">
+        <img class = "preview" src="assets/product_preview.png" alt = "nervous" height= 250 width = 250>
+        <p>The nervous pillow is a great addition to any couch.
+          It exudes anxiety and fear so that anyone nearby can
+          go from confident to nervous in 2 seconds or less guaranteed.</p>
+        </div>
+
+
+      <div class = "product_content">
+        <h2> Nervous Pillow </h2>
+        <h4> $13.99 </h4>
+        <form>
+          <h5> Quantity </h5>
+        <input type="number" name="points" step="1" id= "amt">
+        </form>
+        <h5> Select a Color </h5> <!-- colors to choose from -->
+        <div id = 'dots' onclick = selectDot() >
+        <span class="dot red" ></span>
+        <span class="dot yellow" ></span>
+        <span class="dot blue" > </span>
+        <span class="dot green"></span>
+
+
+        <h5> Select Fluff </h5> <!-- material to stuff pillow-->
+        <div id = 'materials' onclick = selectMat() >
+        <img class = "material" src = "assets/duck_down.jpg" alt = "duck down" >
+        <img class = "material" src = "assets/mem_foam.jpg" alt = "mem foam">
+        <img class = "material" src = "assets/poly.png" alt = "poly">
+
+        <div class = "product-button-wishlist"><a href=#>Add To Wishlist</a></div>
+        <div class = "product-button-add" onClick= addToCart()><a href=#>Add To Cart</a></div>
+
+        </div>
+        </div>
+
+
+      </div>
+
+
+
+
+    </body>

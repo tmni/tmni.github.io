@@ -23,21 +23,44 @@ class CartItem{
 
    function addToCart(){
      var amount = document.getElementById("amt").value;
-     console.log(amount)
      if (amount >0){
+       if (currentItem["name"] !=null && currentItem["color"] !=null && currentItem["material"] !=null ){
+
 
 
        var old = document.getElementById("cart").innerHTML
        var reg =  /\d+/;
        var prev = (old.match(/\d+/))
+
        if (prev == null){
          prev = 0;
        }
+
+
        var total = parseInt(prev) + parseInt(amount)
-      document.getElementById("cart").innerHTML = "Cart (" + String(total) + ")"
+       var item = new CartItem(currentItem["name"], currentItem["color"], currentItem["material"])
+       console.log("looping ",amount, " times")
+       for (i = 0; i< amount; i++) {
+         console.log("cart item ", i)
+         cart.push(item)
+       }
+         console.log("here's the cart", cart)
+
+       document.getElementById("cart").innerHTML = "Cart (" + String(total) + ")"
        alert("Added " + amount + " items to cart!")
        localStorage.setItem("cartTot", JSON.stringify(total));
+       // console.log("the cart now has, ", cart)
+
+
+
+
+
+
+     }
        }
+    else{
+      alert("Make sure you choose a color, material, and at least one pillow")
+    }
      }
    function ProductTrack(){
      currentItem["name"] = document.getElementById("pillow-title").innerHTML.trim()
@@ -50,8 +73,10 @@ class CartItem{
      $(document).ready(function () {
      $(".dot").click(function () {
      $(".dot").removeClass("selected");
+     // console.log("changed color", currentItem)
      $(this).addClass("selected");
      currentItem["color"] = this
+     // console.log("new color", currentItem)
 
      });
      });
@@ -59,8 +84,10 @@ class CartItem{
      $(document).ready(function () {
      $(".material").click(function () {
      $(".material").removeClass("sel");
+     // console.log("changed material", currentItem)
      $(this).addClass("sel");
      currentItem["material"] = this
+     // console.log("added material", currentItem)
      });
      });
 

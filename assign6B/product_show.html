@@ -5,12 +5,14 @@
   <title>Fluff Stuff</title>
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script type="text/javascript" src="main.js"></script>
 
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+
 </head>
 
-<body onload = cartNum()>
+<body onload = ProductTrack()>
 <nav>
   <div class = "logo">
     <a href="index.html"><img src="assets/logo.png" alt = "logo" height="100" width="100"/></a>
@@ -48,7 +50,7 @@
         <input type="number" name="points" step="1" id= "amt">
         </form>
         <h5> Select a Color </h5> <!-- colors to choose from -->
-        <div id = 'dots' onclick = selectDot() >
+        <div id = 'dots'  >
         <span class="dot red" ></span>
         <span class="dot yellow" ></span>
         <span class="dot blue" > </span>
@@ -56,7 +58,7 @@
 
 
         <h5> Select Fluff </h5> <!-- material to stuff pillow-->
-        <div id = 'materials' onclick = selectMat() >
+        <div id = 'materials' >
         <img class = "material" src = "assets/duck_down.jpg" alt = "duck down" >
         <img class = "material" src = "assets/mem_foam.jpg" alt = "mem foam">
         <img class = "material" src = "assets/poly.png" alt = "poly">

@@ -27,22 +27,22 @@ class CartItem{
    }
 
    function pageSetUp(){
-     allCart = JSON.parse(localStorage.getItem("cart"))
-     if (allCart.length > 0)
+
+     if ( JSON.parse(localStorage.getItem("cart")) !== null)
      {
+       var allCart = JSON.parse(localStorage.getItem("cart"))
        document.getElementById("cart").innerHTML = "Cart (" + String(allCart.length) + ")"
      }
 
    }
    function populateCart(){
-     var cartItems = JSON.parse(localStorage.getItem("cart"));
-     if (cartItems.length > 0)
+
+     if (JSON.parse(localStorage.getItem("cart")) !== null)
      {
+       var cartItems = JSON.parse(localStorage.getItem("cart"));
        document.getElementById("cart").innerHTML = "Cart (" + String(cartItems.length) + ")"
-     }
+
      table = document.getElementById("cart-table");
-     console.log("cart from storage",cartItems)
-     console.log(cartItems[0])
      for (i = 0; i < cartItems.length; i++) {
        var tr = document.createElement('TR');
        for (j = 0; j < 4; j++) {
@@ -74,6 +74,9 @@ class CartItem{
 
        table.appendChild(tr);}
    }}
+ else{
+   document.getElementById("noItems").innerHTML = "No items in cart"
+ }}
 
 
 
@@ -105,8 +108,8 @@ class CartItem{
 
        document.getElementById("cart").innerHTML = "Cart (" + String(total) + ")"
        alert("Added " + amount + " items to cart!")
-       if (typeof JSON.parse(localStorage.getItem("cart")) !== 'undefined'){
-         oldCart = JSON.parse(localStorage.getItem("cart"));
+       if ( JSON.parse(localStorage.getItem("cart")) !== null){
+         var oldCart = JSON.parse(localStorage.getItem("cart"));
          console.log("current", cart)
          console.log("old", oldCart)
          localStorage.setItem("cart", JSON.stringify(oldCart.concat(cart)));
@@ -136,10 +139,11 @@ class CartItem{
    function productTrack(){
      currentItem["name"] = document.getElementById("pillow-title").innerHTML.trim()
      currentItem["price"] = document.getElementById("price").innerHTML.trim()
-     allCart = JSON.parse(localStorage.getItem("cart"))
 
-     if (allCart.length > 0)
+
+     if ( JSON.parse(localStorage.getItem("cart")) !== null)
      {
+       var allCart = JSON.parse(localStorage.getItem("cart"))
        document.getElementById("cart").innerHTML = "Cart (" + String(allCart.length) + ")"
      }
     // select a color

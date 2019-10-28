@@ -418,4 +418,19 @@ nav{
 }
 
 [type=submit]:hover {
-  background-color: red ;
+  background-color: red ;}
+
+
+  /* CART */
+
+  #cart-box{
+      height: 500px;
+      width: 1000px;
+      top: 50%;
+      left: 50%;
+      margin-left: 200px;
+      background-color: white;
+      overflow: auto;
+      z-index: 2;
+      text-align: center;
+    }

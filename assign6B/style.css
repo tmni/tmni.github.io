@@ -446,5 +446,5 @@ nav{
     }
 
     tr:nth-child(even) {
-      background-color: rgb(255,234,234); 
+      background-color: rgb(255,234,234);
       color: rgb(225, 114, 114); }

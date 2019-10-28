@@ -35,17 +35,20 @@ class CartItem{
      }
 
    }
+
+
    function populateCart(){
 
      if (JSON.parse(localStorage.getItem("cart")) !== null)
      {
        var cartItems = JSON.parse(localStorage.getItem("cart"));
+       console.log("the cart length is ", cartItems.length)
        document.getElementById("cart").innerHTML = "Cart (" + String(cartItems.length) + ")"
 
      table = document.getElementById("cart-table");
-     for (i = 0; i < cartItems.length; i++) {
+     for (i = 0; i < cartItems.length; i++) { //loop thru rows
        var tr = document.createElement('TR');
-       for (j = 0; j < 4; j++) {
+       for (j = 0; j < 5; j++) { //loop thru columns
          var td = document.createElement('TD')
          switch(j) {
 
@@ -64,19 +67,41 @@ class CartItem{
             case 3:
             td.appendChild(document.createTextNode(cartItems[i].price));
             tr.appendChild(td)
+            break;
+            case 4:
+            console.log("the row is ",i)
+            var btn = document.createElement("BUTTON");
+            btn.onclick = function() { deleteItem(this) };
+            btn.id = "delete_" + i;
+            btn.innerHTML = "X";
+            console.log(btn)
+            td.appendChild((btn));
+            tr.appendChild(td)
             break;}
-
-
-
-
-
-
-
        table.appendChild(tr);}
-   }}
+   }
+
+    }
+
  else{
    document.getElementById("noItems").innerHTML = "No items in cart"
  }}
+
+  function deleteItem(button){
+    console.log("button", button)
+    var cartItems = JSON.parse(localStorage.getItem("cart"));
+    toDelete = parseInt(button.id.match(/\d+/));
+    var table = document.getElementById("cart-table")
+    console.log("have to delete ", table.rows[toDelete] )
+    document.getElementById("cart-table").deleteRow(toDelete);
+    cartItems.splice(toDelete, 1)
+    console.log("deleted that row!", cartItems[toDelete])
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+
+
+
+
+  }
 
 
 
@@ -119,6 +144,7 @@ class CartItem{
          localStorage.setItem("cart", JSON.stringify(cart));
          // localStorage.setItem("cartTot", JSON.stringify(cart.length));
        }
+       window.location.reload()
 
 
 

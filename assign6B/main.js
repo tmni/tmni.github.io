@@ -103,7 +103,7 @@ class CartItem{
        }
        else{
          localStorage.setItem("cart", JSON.stringify(cart));
-         localStorage.setItem("cartTot", JSON.stringify(cart.length));
+         // localStorage.setItem("cartTot", JSON.stringify(cart.length));
        }
 
 
@@ -125,10 +125,11 @@ class CartItem{
    function productTrack(){
      currentItem["name"] = document.getElementById("pillow-title").innerHTML.trim()
      currentItem["price"] = document.getElementById("price").innerHTML.trim()
-     var cartnum = JSON.parse(localStorage.getItem("cartTot"))
-     console.log("the cart num is" + cartnum)
-     if (cartnum >0){
-       document.getElementById("cart").innerHTML = "Cart (" + String(cartnum) + ")"
+     allCart = JSON.parse(localStorage.getItem("cart"))
+
+     if (allCart.length > 0)
+     {
+       document.getElementById("cart").innerHTML = "Cart (" + String(allCart.length) + ")"
      }
     // select a color
      $(document).ready(function () {

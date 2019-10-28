@@ -26,9 +26,20 @@ class CartItem{
      return this.price}
    }
 
+   function pageSetUp(){
+     allCart = JSON.parse(localStorage.getItem("cart"))
+     if (allCart.length > 0)
+     {
+       document.getElementById("cart").innerHTML = "Cart (" + String(allCart.length) + ")"
+     }
 
+   }
    function populateCart(){
      var cartItems = JSON.parse(localStorage.getItem("cart"));
+     if (cartItems.length > 0)
+     {
+       document.getElementById("cart").innerHTML = "Cart (" + String(cartItems.length) + ")"
+     }
      table = document.getElementById("cart-table");
      console.log("cart from storage",cartItems)
      console.log(cartItems[0])

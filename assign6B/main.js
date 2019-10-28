@@ -94,8 +94,22 @@ class CartItem{
 
        document.getElementById("cart").innerHTML = "Cart (" + String(total) + ")"
        alert("Added " + amount + " items to cart!")
-       localStorage.setItem("cartTot", JSON.stringify(cart.length));
-       localStorage.setItem("cart", JSON.stringify(cart));
+       if (typeof JSON.parse(localStorage.getItem("cart")) !== 'undefined'){
+         oldCart = JSON.parse(localStorage.getItem("cart"));
+         console.log("current", cart)
+         console.log("old", oldCart)
+         localStorage.setItem("cart", JSON.stringify(oldCart.concat(cart)));
+         console.log("stored all cart items",JSON.parse(localStorage.getItem("cart")) )
+       }
+       else{
+         localStorage.setItem("cart", JSON.stringify(cart));
+         localStorage.setItem("cartTot", JSON.stringify(cart.length));
+       }
+
+
+
+
+
 
        // console.log("the cart now has, ", cart)
 

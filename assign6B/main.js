@@ -2,45 +2,68 @@ var currentItem =  {
   "name": null,
   "color": null,
   "material": null,
+  "price":null
 };
 
 var cart = []
 
 
 class CartItem{
-  constructor(pillow_type, color, fluff) {
+  constructor(pillow_type, color, fluff, price) {
        this.pillow = pillow_type;
        this.color = color;
        this.fluff = fluff;
+       this.price = price
    }
    getPillow(){
      return this.pillow}
+   getColor(){
+     return this.color}
    getFluff(){
      return this.fluff}
-   getFluff(){
-     return this.fluff}
+
+   getPrice(){
+     return this.price}
    }
 
 
    function populateCart(){
      var cartItems = JSON.parse(localStorage.getItem("cart"));
      table = document.getElementById("cart-table");
-     console.log(cartItems)
-     for(var i = 0; i < cartItems.length; i++)
-          {
-              // create a new row
-              var newRow = table.insertRow(table.length);
-              for(var j = 0; j < cartItems[i].length; j++)
-              {
-                  // create a new cell
-                  var cell = newRow.insertCell(j);
+     console.log("cart from storage",cartItems)
+     console.log(cartItems[0])
+     for (i = 0; i < cartItems.length; i++) {
+       var tr = document.createElement('TR');
+       for (j = 0; j < 4; j++) {
+         var td = document.createElement('TD')
+         switch(j) {
 
-                  // add value to the cell
-                  cell.innerHTML = cartItems[i][j];
-              }
-          }
+            case 0:
+            td.appendChild(document.createTextNode(cartItems[i].pillow));
+            tr.appendChild(td)
+            break;
+            case 1:
+            td.appendChild(document.createTextNode(cartItems[i].color));
+            tr.appendChild(td)
+            break;
+            case 2:
+            td.appendChild(document.createTextNode(cartItems[i].fluff));
+            tr.appendChild(td)
+            break;
+            case 3:
+            td.appendChild(document.createTextNode(cartItems[i].price));
+            tr.appendChild(td)
+            break;}
 
-   }
+
+
+
+
+
+
+       table.appendChild(tr);}
+   }}
+
 
 
 
@@ -61,7 +84,7 @@ class CartItem{
 
 
        var total = parseInt(prev) + parseInt(amount)
-       var item = new CartItem(currentItem["name"], currentItem["color"], currentItem["material"])
+       var item = new CartItem(currentItem["name"], currentItem["color"], currentItem["material"], currentItem["price"])
        // console.log("looping ",amount, " times")
        for (i = 0; i< amount; i++) {
          // console.log("cart item ", i)
@@ -87,6 +110,7 @@ class CartItem{
 
    function productTrack(){
      currentItem["name"] = document.getElementById("pillow-title").innerHTML.trim()
+     currentItem["price"] = document.getElementById("price").innerHTML.trim()
      var cartnum = JSON.parse(localStorage.getItem("cartTot"))
      console.log("the cart num is" + cartnum)
      if (cartnum >0){
@@ -113,7 +137,7 @@ class CartItem{
             break;
           }
 
-     console.log("new color", currentItem)
+     // console.log("new color", currentItem)
 
      });
      });

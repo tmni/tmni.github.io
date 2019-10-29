@@ -36,7 +36,19 @@ class CartItem{
 
    }
 
+   function totalCost(){
+     if (JSON.parse(localStorage.getItem("cart")) !== null &&
+     (JSON.parse(localStorage.getItem("cart")).length) != 0)
+     {
 
+     var carts = JSON.parse(localStorage.getItem("cart"))
+     var total = 0
+     carts.forEach(function (item) {
+       total += parseFloat(item.price)})
+       document.getElementById("total").innerHTML = "Your total is $" + String(total)
+   }
+
+   }
    function populateCart(){
 
      if (JSON.parse(localStorage.getItem("cart")) !== null &&
@@ -80,6 +92,7 @@ class CartItem{
             break;}
        table.appendChild(tr);}
    }
+   totalCost()
 
     }
 
@@ -168,7 +181,7 @@ class CartItem{
 
    function productTrack(){
      currentItem["name"] = document.getElementById("pillow-title").innerHTML.trim()
-     currentItem["price"] = document.getElementById("price").innerHTML.trim()
+     currentItem["price"] = parseFloat(document.getElementById("price").innerHTML.replace(/[^0-9.-]+/g, ''))
 
 
      if ( JSON.parse(localStorage.getItem("cart")) !== null)

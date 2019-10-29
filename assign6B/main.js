@@ -39,7 +39,8 @@ class CartItem{
 
    function populateCart(){
 
-     if (JSON.parse(localStorage.getItem("cart")) !== null)
+     if (JSON.parse(localStorage.getItem("cart")) !== null &&
+     (JSON.parse(localStorage.getItem("cart")).length) != 0)
      {
        var cartItems = JSON.parse(localStorage.getItem("cart"));
        console.log("the cart length is ", cartItems.length)
@@ -69,7 +70,6 @@ class CartItem{
             tr.appendChild(td)
             break;
             case 4:
-            console.log("the row is ",i)
             var btn = document.createElement("BUTTON");
             btn.onclick = function() { deleteItem(this) };
             btn.id = "delete_" + i;
@@ -85,18 +85,22 @@ class CartItem{
 
  else{
    document.getElementById("noItems").innerHTML = "No items in cart"
- }}
+ }
+}
 
   function deleteItem(button){
     console.log("button", button)
     var cartItems = JSON.parse(localStorage.getItem("cart"));
     toDelete = parseInt(button.id.match(/\d+/));
     var table = document.getElementById("cart-table")
+    console.log("the cart currently has", cartItems)
+    console.log("I want to delete ", cartItems[toDelete])
     console.log("have to delete ", table.rows[toDelete] )
     document.getElementById("cart-table").deleteRow(toDelete);
-    cartItems.splice(toDelete, 1)
-    console.log("deleted that row!", cartItems[toDelete])
+    console.log("deleting from array", cartItems.splice(toDelete, 1))
+    console.log("the cart is now", cartItems)
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    window.location.reload()
 
 
 

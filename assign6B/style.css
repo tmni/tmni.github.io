@@ -423,6 +423,9 @@ nav{
 
   /* CART */
 
+  #noItems{
+    text-align: center;
+  }
   #cart-box{
       height: 500px;
       width: 1000px;

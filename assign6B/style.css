@@ -422,7 +422,16 @@ nav{
 
 
   /* CART */
+  #checkout-button button{
+    background-color: rgb(242, 114, 114) ;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 
+    margin: 0 auto;
+    }
   #noItems{
     text-align: center;
   }

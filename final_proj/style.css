@@ -1,0 +1,49 @@
+body{
+  background-color: black;
+}
+h2 {
+  text-align: left;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+.btn-secondary:hover{
+  color: #24CE88!important ;
+  box-shadow:none !important;
+  border: 2px solid #24CE88 !important;
+  background-color: black;
+}
+.show > .btn-secondary:focus{
+  color: #24CE88!important ;
+  box-shadow:none !important;
+  border: 2px solid #24CE88 !important;
+  background-color: black;
+}
+
+.show > .btn-secondary.dropdown-toggle{
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+
+.dropdown-menu {
+  background-color: black;
+  border: 2px solid white
+}
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  color: #24CE88!important ;
+  background-color: black;
+}
+
+#name{
+  color:white;
+}

@@ -4,6 +4,20 @@ var diff = null
 var viz = null
 var context
 var src
+// change start to stop
+function change() // no ';' here
+{
+    console.log("calling change")
+    var elem = document.getElementById("start");
+    elemText = elem.innerHTML
+    console.log("elem", elem.innerHTML)
+    if (elemText=="Start"){
+      console.log("it equals start")
+      elem.innerHTML = "Stop";
+    }
+    else {location = location
+}
+}
 
 $('.dropdown-item').click(function() { // change variables based on what the user clicks
   toSet = $(this).text() ;
@@ -216,12 +230,13 @@ function viz1(){
 
 
   function start() {
+    change()
     retrieveSettings()
     setAudio()
     audio.crossOrigin = "anonymous"
     switch(viz) {
-      case "Viz 1":
-        console.log("case is viz 1")
+      case "Bars":
+        console.log("case is viz bars")
         viz1()
         break
         default:
@@ -234,3 +249,29 @@ function viz1(){
     // audio.src = URL.createObjectURL(files[0]); // Creates a DOMString containing the specified File object
 
     // const name = files[0].name
+    $(document).ready(function() {
+
+    // We don't want to see the popover contents until the user clicks the target.
+    // If you don't hide 'blah' first it will be visible outside of the popover.
+    //
+    $('#blah').hide();
+
+    // Initialize our popover
+    //
+    $('#target').popover({
+        content: $('#blah'), // set the content to be the 'blah' div
+        placement: 'bottom',
+        html: true
+    });
+    // The popover contents will not be set until the popover is shown.  Since we don't
+    // want to see the popover when the page loads, we will show it then hide it.
+    //
+    $('#target').popover('show');
+    $('#target').popover('hide');
+
+    // Now that the popover's content is the 'blah' dive we can make it visisble again.
+    //
+    $('#blah').show();
+
+
+});

@@ -9,23 +9,24 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
+
   <body>
   <div class="container">
   <div class="row">
-    <h2 class = "col-6"> Freestyle Rap Assistant </h2>
-    <button class="btn btn-secondary" onclick = "start()" type="button" aria-haspopup="true" aria-expanded="false">
-      Start </button>
-  <div class="btn-group col">
-  <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Level
-  </button>
-  <div class="dropdown-menu" id="lvl" aria-labelledby="dropdownMenuButton">
-    <button class="dropdown-item"  type="button">Level 1</button>
-    <button class="dropdown-item"  type="button">Level 2</button>
-    <button class="dropdown-item"  type="button">Level 3</button>
-  </div>
-</div>
 
+<!-- This will be the contents of our popover -->
+<div class='_content' id='blah'>
+<h4 class = "text-center">Settings</h4>
+<div class="btn-group col">
+<button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Level
+</button>
+<div class="dropdown-menu" id="lvl" aria-labelledby="dropdownMenuButton">
+  <button class="dropdown-item"  type="button">Level 1</button>
+  <button class="dropdown-item"  type="button">Level 2</button>
+  <button class="dropdown-item"  type="button">Level 3</button>
+</div>
+</div>
 <div class="btn-group col">
   <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Difficulty
@@ -36,24 +37,30 @@
     <button class="dropdown-item" type="button">Hard</button>
   </div>
 </div>
-
 <div class="btn-group col">
   <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Visualization
   </button>
   <div class="dropdown-menu" id="viz"  aria-labelledby="dropdownMenuButton">
-    <button class="dropdown-item" type="button">Viz 1</button>
+    <button class="dropdown-item" type="button">Bars</button>
     <button class="dropdown-item" type="button">Viz 2</button>
     <button class="dropdown-item" type="button">Viz 3</button>
   </div>
   </div>
+</div>
+    <h2 class = "col-8 text-left"> Freestyle Rap Assistant </h2>
+    <button class="btn btn-secondary" id = "start" onclick = "start()" type="button" aria-haspopup="true" aria-expanded="false">Start</button>
+      <div><button class = "btn btn-secondary"id="target">Edit Preferences</button></div>
+
   </div>
   <h3 id="name"></h3>
-  <h3 id= "word"></h3>
+  <div class='word-container'>
+  <h3 class = "text-center" id= "word"></h3>
+</div>
+  <div class='audio-container'>
   <audio id="audio" controls></audio>
+  </div>
   <canvas id="canvas"></canvas>
-
-
 
 </div>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

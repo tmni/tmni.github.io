@@ -6,17 +6,16 @@ body{
 h2 {
   text-align: left;
   color: white;
+  margin: 10px;
 }
 
-h2 {
-  text-align: center;
-  color: white;
-}
 
 .btn-secondary {
   background-color: black;
   color: white;
   border: 2px solid white;
+  height: 50px;
+  margin: 10px;
 }
 .btn-secondary:hover{
   color: #24CE88!important ;
@@ -77,6 +76,23 @@ html {
     font-size: 1.6rem;
   }
 }
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 2000px;
+    }
+}
 canvas{
   overflow: hidden;
+}
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
 }

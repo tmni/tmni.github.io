@@ -15,14 +15,14 @@ $('.dropdown-item').click(function() { // change variables based on what the use
     lvl = toSet;
     console.log("setting lvl to ", toSet)
     localStorage.setItem('lvl', JSON.stringify(lvl));
-    // console.log("calling start")
-    // start()
+    console.log("calling start")
+    start()
     break;
   case "diff":
     diff = toSet;
     localStorage.setItem('diff', JSON.stringify(diff));
     console.log("calling changewords")
-    setInterval(changeWords, 5000);
+    setInterval(changeWords, 10000);
     break;
   case "viz":
     viz = toSet;

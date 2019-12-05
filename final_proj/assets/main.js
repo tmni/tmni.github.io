@@ -15,12 +15,14 @@ $('.dropdown-item').click(function() { // change variables based on what the use
     lvl = toSet;
     console.log("setting lvl to ", toSet)
     localStorage.setItem('lvl', JSON.stringify(lvl));
-    console.log("calling start")
-    start()
+    // console.log("calling start")
+    // start()
     break;
   case "diff":
     diff = toSet;
     localStorage.setItem('diff', JSON.stringify(diff));
+    console.log("calling changewords")
+    setInterval(changeWords, 5000);
     break;
   case "viz":
     viz = toSet;
@@ -33,6 +35,30 @@ $('.dropdown-item').click(function() { // change variables based on what the use
 }
 
 });
+
+function changeWords(){
+
+  var word = document.getElementById("word");
+
+  switch(diff) {
+    case "Easy":
+      var arr = easy_words
+      break;
+    case "Medium":
+      var arr = med_words
+      break;
+    case "Hard":
+      var arr = hard_words
+      break;
+    }
+    console.log("arr is ", arr)
+    var randIndex = Math.floor(Math.random() * arr.length)
+    console.log("changing word to ", arr[randIndex])
+    word.innerHTML = arr[randIndex];
+
+    }
+
+
 
 function setAudio(){
   var audio = document.getElementById("audio");

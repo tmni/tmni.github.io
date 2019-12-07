@@ -134,9 +134,9 @@ label{
 }
 
 @media (min-width: 1200px) {
-    .container{
-        max-width: 2000px;
-    }
+  .container{
+    max-width: 2000px;
+  }
 }
 
 .audio-container {
@@ -167,7 +167,7 @@ header {
 #form-step-wrap{
   position: relative;
   overflow-x: hidden;
-	width: 100%;
+  width: 100%;
 }
 #step1box{
   width: 100%;
@@ -177,9 +177,9 @@ header {
 
 /* Each Step */
 .slider-step{
-	padding-left:30%;
+  padding-left:30%;
   padding-right:25%;
-	position: absolute;
+  position: absolute;
   width: 100%;
   right: -50%;
   top: 30px;
@@ -200,8 +200,8 @@ header {
 /* Button */
 .btn-next,
 .btn-back{
-	margin-top: 20px;
-	display: inline;
+  margin-top: 20px;
+  display: inline;
   position: absolute;
   width: 50%;
   left: 25%;
@@ -227,12 +227,12 @@ header {
 }
 
 .form-actions {
-    margin: 0;
-    background-color: transparent;
-    text-align: center;
-    align: center;
-    padding-left:30%;
-    padding-right:25%;
+  margin: 0;
+  background-color: transparent;
+  text-align: center;
+  align: center;
+  padding-left:30%;
+  padding-right:25%;
 }
 
 

@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 
-   //Dynamic Next
+  //Dynamic Next
   $(".btn-next").on("click", function(){
     console.log("WE OUT HERE")
     nextStep = $("#" + $(this).parents(".slider-step").data("nextStep"));

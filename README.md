@@ -25,3 +25,10 @@ PUI Class Assignments
 <p>to reach login, click on account</p>
 <p>to add items, use the nervous pillow to customize and add</p>
 <p>to see cart, go to cart in nav. Feel free to delete items from the cart</p>
+
+<b>Assignment 8 (Final) Directions:</b>
+<p>Web Audio API <b>DOES NOT SUPPORT SAFARI</b> so Firefox or Chrome should be used</p>
+<p>to go to welcome screen, go to index.html </p>
+<p>to choose options, go to choices.html </p>
+<p>to go to the actual tool, go to tool.html </p>
+<p>Let me know if you have questions or it doesnt work as expected. Enjoy! </p>

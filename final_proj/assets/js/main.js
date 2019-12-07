@@ -1,7 +1,7 @@
 
 var lvl = null
 var diff = null
-var viz = null
+var viz = "Bars"
 var context
 var src
 // change start to stop
@@ -120,16 +120,15 @@ function retrieveSettings(){
   lvl = JSON.parse(localStorage.getItem('lvl'));
   diff = JSON.parse(localStorage.getItem('diff'));
   viz = JSON.parse(localStorage.getItem('viz'));
-  console.log("retrieved settings lvl", lvl, "diff", diff, "viz", viz)
 }
 
 
 
-
+// retrieves settings and displays music viz
   function start() {
 
     retrieveSettings()
-    if (viz ==null || lvl == null){
+    if (lvl == null){
       alert("the freestyle assistant requires a level and visualization choice to run")
       return;
     }
@@ -143,8 +142,8 @@ function retrieveSettings(){
       case "Bars":
         console.log("case is viz bars")
         viz1()
-        break
-        default:
+        break;
+      default:
         viz1()
       }
     }

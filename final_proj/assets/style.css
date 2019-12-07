@@ -9,7 +9,9 @@ h2 {
   margin: 10px;
 }
 
-
+#start-rapping{
+  background-color: Transparent;
+}
 .btn-secondary {
   background-color: black;
   color: white;
@@ -82,9 +84,7 @@ html {
         max-width: 2000px;
     }
 }
-canvas{
-  overflow: hidden;
-}
+
 .audio-container {
   display: flex;
   justify-content: center;
@@ -94,7 +94,7 @@ canvas{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 1%;
 }
 
 header {
@@ -145,3 +145,98 @@ header .overlay {
     display: none;
   }
 }
+/* WATCH */
+
+#form-step-wrap{
+  position: relative;
+  overflow-x: hidden;
+	width: 100%;
+}
+#step1box{
+  width: 100%;
+}
+
+
+input { width: auto }
+/* Each Step */
+.slider-step{
+	padding-left:30%;
+  padding-right:25%;
+	position: absolute;
+  width: 100%;
+  right: -50%;
+  top: 30px;
+  opacity: 0;
+  -webkit-transition:all, 0.3s linear;
+  -moz-transition: all, 0.3s linear;
+  -ms-transition: all, 0.3s linear;
+  -o-transition: all, 0.3s linear;
+  transition: all, 0.3s linear;
+}
+
+/* Show the 1st step */
+.first-step{
+  right: 0;
+  opacity: 1;
+}
+
+/* Button */
+.btn-next,
+.btn-back{
+	margin-top: 20px;
+	display: inline;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+
+}
+
+/* Animations Settings */
+[data-anim="show-from--right"]{
+  right: 0;
+  opacity: 1;
+}
+[data-anim="show-from--left"]{
+  right: 0;
+  opacity: 1;
+}
+[data-anim="hide-to--right"]{
+  right: -50%;
+  opacity: 0;
+}
+[data-anim="hide-to--left"]{
+  right: 50%;
+  opacity: 0;
+}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    align: center;
+    padding-left:30%;
+    padding-right:25%;
+}
+
+label{
+  font-size: 50px;
+  padding-bottom: 1%;
+}
+#word{
+  font-size: 60px;
+  color: #50FF8A;
+}
+
+.material-icons{
+  margin-top:2%
+}
+
+#audio{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+/* canvas{
+  width: 100%;
+  height: 100%;
+} */

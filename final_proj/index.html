@@ -10,63 +10,19 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
 
-  <body>
-  <div class="container">
-  <div class="row">
 
-<!-- This will be the contents of our popover -->
-<div class='_content' id='blah'>
-<h4 class = "text-center">Settings</h4>
-<div class="btn-group col">
-<button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Level
-</button>
-<div class="dropdown-menu" id="lvl" aria-labelledby="dropdownMenuButton">
-  <button class="dropdown-item"  type="button">Level 1</button>
-  <button class="dropdown-item"  type="button">Level 2</button>
-  <button class="dropdown-item"  type="button">Level 3</button>
-</div>
-</div>
-<div class="btn-group col">
-  <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Difficulty
-  </button>
-  <div class="dropdown-menu" id="diff" aria-labelledby="dropdownMenuButton">
-    <button class="dropdown-item" type="button">Easy</button>
-    <button class="dropdown-item" type="button">Medium</button>
-    <button class="dropdown-item" type="button">Hard</button>
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="assets/video.mp4" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3">Freestyle Rap Assistant</h1>
+        <p class="lead mb-0">Unleash Your potential</p>
+        <a href="choices.html" id = "start-rapping" class="btn btn-secondary">Start Rapping</a>
+      </div>
+    </div>
   </div>
-</div>
-<div class="btn-group col">
-  <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Visualization
-  </button>
-  <div class="dropdown-menu" id="viz"  aria-labelledby="dropdownMenuButton">
-    <button class="dropdown-item" type="button">Bars</button>
-    <button class="dropdown-item" type="button">Viz 2</button>
-    <button class="dropdown-item" type="button">Viz 3</button>
-  </div>
-  </div>
-</div>
-    <h2 class = "col-8 text-left"> Freestyle Rap Assistant </h2>
-    <button class="btn btn-secondary" id = "start" onclick = "start()" type="button" aria-haspopup="true" aria-expanded="false">Start</button>
-      <div><button class = "btn btn-secondary"id="target">Edit Preferences</button></div>
-
-  </div>
-  <h3 id="name"></h3>
-  <div class='word-container'>
-  <h3 class = "text-center" id= "word"></h3>
-</div>
-  <div class='audio-container'>
-  <audio id="audio" controls></audio>
-  </div>
-  <canvas id="canvas"></canvas>
-
-</div>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="assets/main.js" type="text/javascript"></script>
-      <script src="assets/words.js" type="text/javascript"></script>
-    </body>
-    </html>
+</header>

@@ -10,7 +10,7 @@ function viz1(){
 
   ///////// <CANVAS> INITIALIZATION //////////
   canvas.width = window.outerWidth
-  canvas.height = window.outerHeight - .5* window.innerHeight
+  canvas.height = window.innerHeight 
   const ctx = canvas.getContext("2d");
   // console.log("set canvas width and height to", canvas.width, canvas.height = window.innerHeight )
   ///////////////////////////////////////////

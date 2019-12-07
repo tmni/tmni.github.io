@@ -127,9 +127,15 @@ function retrieveSettings(){
 
 
   function start() {
+
+    retrieveSettings()
+    if (viz ==null || lvl == null){
+      alert("the freestyle assistant requires a level and visualization choice to run")
+      return;
+    }
     document.getElementById("audio").controls = true;
     change()
-    retrieveSettings()
+
     setInterval(changeWords, 5000);
     setAudio()
     audio.crossOrigin = "anonymous"

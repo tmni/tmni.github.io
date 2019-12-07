@@ -20,12 +20,28 @@ function saveUserPrefs(){
   lvl = document.getElementById("beatchoice").value;
   diff = document.getElementById("diffchoice").value;
   viz = document.getElementById("vizchoice").value;
+  var wow = $('.dropdown-menu').children();
+  console.log("wow", wow)
+}
+function updateText(obj){
+
+  console.log($(obj).attr("class"))
+  switch ($(obj).attr("class")) {
+    case "dropdown-item lvl":
+      $(".dropdown-item.lvl.selected").removeClass("selected")
+      break;
+    case "dropdown-item diff":
+      $(".dropdown-item.diff.selected").removeClass("selected");
+      break;
+    case "dropdown-item viz":
+      $(".dropdown-item.viz.selected").removeClass("selected");
+      break;}
+  $(obj).addClass("selected");
+  console.log("changed class")
 }
 
-$('.dropdown-item').click(function() { // change variables based on what the user clicks
-  toSet = $(this).text() ;
-  var id = $(this).parent().attr("id");
-  console.log("CALLED click")
+function updateDefaults(obj){
+  var id = $(obj).parent().attr("id");
   switch(id) {
 
   case "lvl":
@@ -48,6 +64,12 @@ $('.dropdown-item').click(function() { // change variables based on what the use
     console.log("sadboi")
     break;
 }
+}
+
+$('.dropdown-item').click(function() { // change variables based on what the user clicks
+  toSet = $(this).text() ;
+  updateText(this)
+  updateDefaults(this)
 
 });
 

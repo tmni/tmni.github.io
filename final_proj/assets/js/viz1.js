@@ -20,11 +20,8 @@ function viz1(){
   }
   if (src == undefined){
     src = context.createMediaElementSource(audio)}
-
-  // var context = new AudioContext(); // (Interface) Audio-processing graph
-  //
   // console.log("created audio context", context)
-  // let src = context.createMediaElementSource(audio); // Give the audio context an audio source,
+ // Give the audio context an audio source,
   // to which can then be played and manipulated
   console.log("created media element source")
   const analyser = context.createAnalyser(); // Create an analyser for the audio context
@@ -92,28 +89,28 @@ function viz1(){
         g = 255
         b = 0
       } else if (dataArray[i] > 190){ // yellow/green
-        r = 204
-        g = 255
-        b = 0
+        r = 0
+        g = 179
+        b = 6
       } else if (dataArray[i] > 180){ // blue/green
-        r = 0
-        g = 219
-        b = 131
-      } else { // light blue
-        r = 0
-        g = 199
+        r = 255
+        g = 179
+        b = 0
+      } else if (dataArray[i] > 100){ // light blue
+        r = 169
+        g = 82
         b = 255
       }
+     else { // light blue
+      r = 36
+      g = 102
+      b = 255
+    }
 
-      // if (i === 0){
-      //   console.log(dataArray[i])
-      // }
 
       ctx.fillStyle = `rgb(${r},${g},${b})`;
       ctx.fillRect(x, (HEIGHT - barHeight), barWidth, barHeight);
-      // (x, y, i, j)
-      // (x, y) Represents start point
-      // (i, j) Represents end point
+
 
       x += barWidth + 10 // Gives 10px space between each bar
     }}

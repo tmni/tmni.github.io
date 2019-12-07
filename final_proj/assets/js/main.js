@@ -18,9 +18,10 @@ function change() // no ';' here
 function saveUserPrefs(){
   lvl = document.getElementById("beatchoice").value;
   diff = document.getElementById("diffchoice").value;
-  viz = document.getElementById("vizchoice").value;
-  var wow = $('.dropdown-menu').children();
-  console.log("wow", wow)
+  localStorage.setItem('lvl', JSON.stringify(lvl));
+  localStorage.setItem('diff', JSON.stringify(diff));
+  console.log(lvl, diff)
+
 }
 // update the dropdown selected
 function updateText(obj){
